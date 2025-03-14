@@ -1,9 +1,17 @@
 {% extends 'students/base.html' %}
 
 {% block content %}
-<div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Success!</h4>
-    <p>{{ message }}</p>
-    <a href="{% url 'student_list' %}" class="btn btn-primary">Go back to the student list</a>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg text-center" style="width: 30rem;">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Success!</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead">{{ message }}</p>
+            <a href="{% url 'student_list' %}" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Go back to the student list
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}

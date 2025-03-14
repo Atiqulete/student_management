@@ -2,19 +2,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 40vh; padding-top: 2px; padding-bottom: 30px;">
-    <h2 class="mb-1">{% if student %} Edit {% else %} Add {% endif %} Student</h2>
-    <form method="POST" class="w-50 p-1 shadow-sm rounded bg-light">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <div class="mt-1">
-            <button type="submit" class="btn btn-primary btn-sm">
-                <i class="fas fa-save"></i> Save
-            </button>
-            <a href="{% url 'student_list' %}" class="btn btn-secondary btn-sm">
-                <i class="fas fa-arrow-left"></i> Back to List
-            </a>
-        </div>
-    </form>
+<div class="d-flex flex-column justify-content-center align-items-center min-vh-50 py-4">
+    <h2 class="mb-3 text-center">{% if student %} Edit {% else %} Add {% endif %} Student</h2>
+    <div class="card shadow-lg rounded-3 p-4 w-75 w-md-50 bg-light">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <a href="{% url 'student_list' %}" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

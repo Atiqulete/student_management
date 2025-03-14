@@ -1,24 +1,24 @@
 {% extends 'students/base.html' %}
 
 {% block content %}
-<div class="container mt-5 d-flex justify-content-center">
-    <div class="card shadow-sm rounded" style="width: 80%; max-width: 600px;">
-        <div class="card-header bg-info text-white text-center">
-            <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg rounded-3" style="width: 90%; max-width: 500px;">
+        <div class="card-header bg-primary text-white text-center">
+            <h3 class="mb-0">{{ student.first_name }} {{ student.last_name }}</h3>
         </div>
         <div class="card-body text-center">
             <p><strong>Course:</strong> <span class="text-muted">{{ student.course }}</span></p>
             <p><strong>Email:</strong> <span class="text-muted">{{ student.email }}</span></p>
             <p><strong>Phone:</strong> <span class="text-muted">{{ student.phone }}</span></p>
             <p><strong>Address:</strong> <span class="text-muted">{{ student.address }}</span></p>
-            <div class="d-flex justify-content-center mt-4">
-                <a href="{% url 'student_edit' student.id %}" class="btn btn-warning btn-sm mx-2">
+            <div class="d-flex justify-content-center gap-2 mt-4">
+                <a href="{% url 'student_edit' student.id %}" class="btn btn-warning btn-sm">
                     <i class="fas fa-edit"></i> Edit
                 </a>
-                <a href="{% url 'student_delete' student.id %}" class="btn btn-danger btn-sm mx-2">
+                <a href="{% url 'student_delete' student.id %}" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i> Delete
                 </a>
-                <a href="{% url 'student_list' %}" class="btn btn-secondary btn-sm mx-2">
+                <a href="{% url 'student_list' %}" class="btn btn-secondary btn-sm">
                     <i class="fas fa-arrow-left"></i> Back to List
                 </a>
             </div>
