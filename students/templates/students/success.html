@@ -1,0 +1,9 @@
+{% extends 'students/base.html' %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Success!</h4>
+    <p>{{ message }}</p>
+    <a href="{% url 'student_list' %}" class="btn btn-primary">Go back to the student list</a>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+/* Custom Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+    color: #343a40;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: #ffffff;
+}
